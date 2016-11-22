@@ -1,0 +1,33 @@
+<html ng-app="myApp">
+    <head>
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container">            
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><i class="fa fa-home"></i>Home</a></li>                
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div>
+                <div class="container">            
+                    <div id="main">
+                        <div ng-view></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <script src="assets/js/jquery-1.12.3.js"></script>
+        <script src="assets/js/angular.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/angular-route.js"></script>      
+        <script src="./js/route.js"></script>
+        <script src ="./js/home.js"></script>
+    </body>
+</html>

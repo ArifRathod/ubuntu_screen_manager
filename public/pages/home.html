@@ -1,0 +1,52 @@
+<div class="outerdiv" style="float: right;">
+ 
+</div>
+</br>
+<div class="outerdiv">
+	    <div class="table-responsive">          
+          <table class="table">
+            <tr>
+              <td><b>Port</b></td>
+              <td><b>Screen Name</b></td>
+              <td><b>Status</b></td>              
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><b>Notification</b></td>
+            </tr>
+            <tr ng-repeat="app in appData">
+              <td>{{ app.port }}</td>
+              <td>{{ app.screenName }}</td>
+              <td>{{ app.status }}</td>              
+              <td>
+                <button class="btn btn-primary"  type="button" ng-click="start(app)" ng-disabled="app.status == 'running'">Start
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-primary"  type="button" ng-click="stop(app)" ng-disabled="app.status == 'stopped'">Stop
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-primary"  type="button" ng-click="restart(app)">Restart
+                </button>
+              </td>
+              <td>
+                <input type="checkbox" ng-model="app.notify">
+                <span>{{app.notify ? 'ON' : 'OFF'}}</span>
+              </td>
+            </tr>
+          </table>
+      </div>
+</div>
+<div class="outerdiv" style="float: right;">
+   
+    <label>Select Server : </label>
+     <select id="serverID" ng-model="serverID" ng-change="serverChanged()">
+      <option value="s1" selected>S1</option>
+      <option value="s2">S2</option>
+      <option value="s3">S3</option>
+      <option value="s4">S4</option>
+    </select>
+    <button class="btn btn-primary"  type="button" ng-click="updateNotify(appData)">Update Notification Config
+    </button>
+</div>
